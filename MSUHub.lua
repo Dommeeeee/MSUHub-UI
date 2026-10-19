@@ -97,12 +97,36 @@ local function ApplyMSUHubTheme(logoAssetId)
 				if infoGroup then
 					infoGroup.BackgroundColor3 = Theme.CardBg
 					infoGroup.BackgroundTransparency = 0.45
-					infoGroup.Size = UDim2.new(1, 0, 0, 64)
+					infoGroup.Size = UDim2.new(1, 0, 0, 60)
 					infoGroup.AnchorPoint = Vector2.new(0, 0.5)
 					infoGroup.Position = UDim2.fromScale(0, 0.5)
-					local uc = Instance.new("UICorner", infoGroup)
+
+					local pad = infoGroup:FindFirstChildOfClass("UIPadding")
+					if pad then
+						pad.PaddingBottom = UDim.new(0, 0)
+						pad.PaddingTop = UDim.new(0, 0)
+						pad.PaddingLeft = UDim.new(0, 14)
+						pad.PaddingRight = UDim.new(0, 14)
+					end
+
+					local layout = infoGroup:FindFirstChildOfClass("UIListLayout")
+					if layout then
+						layout.VerticalAlignment = Enum.VerticalAlignment.Center
+					end
+
+					local userFrame = infoGroup:FindFirstChild("UserAndDisplayFrame")
+					if userFrame then
+						local userPad = userFrame:FindFirstChildOfClass("UIPadding")
+						if userPad then
+							userPad.PaddingTop = UDim.new(0, 0)
+							userPad.PaddingBottom = UDim.new(0, 0)
+							userPad.PaddingLeft = UDim.new(0, 10)
+						end
+					end
+
+					local uc = infoGroup:FindFirstChildOfClass("UICorner") or Instance.new("UICorner", infoGroup)
 					uc.CornerRadius = UDim.new(0, 12)
-					local us = Instance.new("UIStroke", infoGroup)
+					local us = infoGroup:FindFirstChildOfClass("UIStroke") or Instance.new("UIStroke", infoGroup)
 					us.Color = Theme.StrokeCyan
 					us.Transparency = 0.65
 				end

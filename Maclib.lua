@@ -543,8 +543,10 @@ function MacLib:Window(Settings)
 
 	local informationGroupUIPadding = Instance.new("UIPadding")
 	informationGroupUIPadding.Name = "InformationGroupUIPadding"
-	informationGroupUIPadding.PaddingBottom = UDim.new(0, 17)
-	informationGroupUIPadding.PaddingLeft = UDim.new(0, 25)
+	informationGroupUIPadding.PaddingBottom = UDim.new(0, 0)
+	informationGroupUIPadding.PaddingTop = UDim.new(0, 0)
+	informationGroupUIPadding.PaddingLeft = UDim.new(0, 14)
+	informationGroupUIPadding.PaddingRight = UDim.new(0, 14)
 	informationGroupUIPadding.Parent = informationGroup
 
 	local informationGroupUIListLayout = Instance.new("UIListLayout")
@@ -615,8 +617,9 @@ function MacLib:Window(Settings)
 
 	local userAndDisplayFrameUIPadding = Instance.new("UIPadding")
 	userAndDisplayFrameUIPadding.Name = "UserAndDisplayFrameUIPadding"
-	userAndDisplayFrameUIPadding.PaddingLeft = UDim.new(0, 8)
-	userAndDisplayFrameUIPadding.PaddingTop = UDim.new(0, 3)
+	userAndDisplayFrameUIPadding.PaddingLeft = UDim.new(0, 10)
+	userAndDisplayFrameUIPadding.PaddingTop = UDim.new(0, 0)
+	userAndDisplayFrameUIPadding.PaddingBottom = UDim.new(0, 0)
 	userAndDisplayFrameUIPadding.Parent = userAndDisplayFrame
 
 	local userAndDisplayFrameUIListLayout = Instance.new("UIListLayout")
